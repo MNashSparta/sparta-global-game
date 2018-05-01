@@ -1,32 +1,42 @@
 body {
-  background-color: pink;
+  background-color: olive;
   margin: 0 auto;
-  border-radius:10px;
+  border-radius: 10px;
   font-family: 'Helvetica';
   position: relative;
 }
 
-.player {
-  border: 1px solid black;
-  width: 100px;
-  height: 100px;
+ .player {
+  border: 5px solid black;
+  border-radius: 25px;
   text-align: center;
   font-size: 3em;
+
 }
 
 
 .game-board {
-  width: 1000px;
+  width: 506px;
   height: 200px;
   position: absolute;
   display: table;
+
 }
 
 .hollow {
- position:
 }
 
 .goal {
-  height: 200px;
+ height: 100%;
+}
 
+.background-row {
+  height: 100%;
+
+  background-image: url('../img/board.png');
+  background-position: center;
+
+  background-size: 100% 100%;
+
+  background-repeat: no-repeat;
 }

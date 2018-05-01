@@ -1,42 +1,103 @@
 body {
-  background-color: olive;
   margin: 0 auto;
-  border-radius: 10px;
   font-family: 'Helvetica';
-  position: relative;
-}
-
- .player {
-  border: 5px solid black;
-  border-radius: 25px;
-  text-align: center;
-  font-size: 3em;
+  background-image: url("../img/background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 100%,100%;
 
 }
 
+h1 {
+  color: white;
+}
 
 .game-board {
-  width: 506px;
-  height: 200px;
-  position: absolute;
-  display: table;
 
-}
-
-.hollow {
-}
-
-.goal {
- height: 100%;
 }
 
 .background-row {
-  height: 100%;
-
+  margin: auto;
+  height: 250px;
+  width: 700px;
   background-image: url('../img/board.png');
   background-position: center;
-
-  background-size: 100% 100%;
-
+  background-size: 100%, 100%;
   background-repeat: no-repeat;
+}
+
+.middle-row {
+  display: inline-block;
+  width: 520px;
+  text-align: center;
+}
+
+.top-row {
+  display: inline-block;
+  text-align: center;
+}
+.bottom-row {
+  display: inline-block;
+  text-align: center;
+}
+.number  {
+  width: 70px;
+  display: inline-block;
+  text-align: center;
+}
+.top-row {
+  display: inline-block;
+}
+
+.board-row {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.player {
+  position: relative;
+  border: 0.3px solid black;
+  border-radius: 35px;
+  text-align: center;
+  font-size: 2em;
+  display:inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 50px;
+  width: 50px;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.counter {
+  position: relative;
+  text-align: center;
+  font-size: 1.3em;
+  display:inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 5px;
+}
+
+.hollow {
+  border: 0px solid black;
+
+}
+
+.goal {
+  height: 150px;
+  width: 70px;
+
+}
+
+.goal1{
+  float: right;
+  margin-right: 20px;
+  margin-top: 70px;
+
+}
+.goal2{
+  float: left;
+  margin-left: 20px;
+  margin-top: 30px;
 }

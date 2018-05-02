@@ -29,28 +29,13 @@ function PrepareBoard() {
       board[i].innerHTML = 0;
     } else {
       board[i].innerHTML = 4;
-<<<<<<< HEAD
-      //AddPieces();
-=======
       AddPieces();
->>>>>>> d8b18a5ffff02f5f10859c8839bc21ff7b0c2f48
     }
   }
 
   PlayerTurn();
 }
 
-<<<<<<< HEAD
-// function AddPieces() {
-//   for (var j = 0; j < 4; j++) {
-//     var img = document.createElement("img");
-//     img.src = "../img/stone-" + j ".png";
-//     console.log(img.src);
-//     var src = board[i];
-//     src.appendChild(img);
-//   }
-// }
-=======
 function AddPieces() {
   for (var j = 0; j < 4; j++) {
     var img = document.createElement("img");
@@ -60,7 +45,7 @@ function AddPieces() {
     src.appendChild(img);
   }
 }
->>>>>>> d8b18a5ffff02f5f10859c8839bc21ff7b0c2f48
+
 
 function PlayerTurn() {
   // Sets click events depending upon who is the current player

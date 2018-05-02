@@ -29,6 +29,10 @@ function PrepareBoard() {
       board[i].innerHTML = 0;
     } else {
       board[i].innerHTML = 4;
+      var img = document.createElement("img");
+      img.src = "image.png";
+      var src = document.getElementById("x");
+      src.appendChild(img);
     }
   }
 
@@ -54,7 +58,7 @@ function PlayerTurn() {
 function Player1Click() {
   // Checking validity of chosen move
   if (parseInt(this.innerHTML) === 0) {
-    console.log("invalid move");
+    document.getElementById('score').innerHTML = "You can't do that. Try another move!";
   }
   else {
     var stones = parseInt(this.innerHTML);
@@ -80,7 +84,7 @@ function Player1Click() {
     // Capturing logic
     if (lastPosition >= 13 && lastPosition <= 18 && board[overlap-1].innerHTML === "1") {
       board[6].innerHTML = parseInt(board[6].innerHTML) + parseInt(board[inverseOverlap].innerHTML) + parseInt(board[overlap-1].innerHTML);
-      console.log("capture");
+      document.getElementById('score').innerHTML = "You captured your opponents pieces!";
       board[overlap-1].innerHTML = 0;
       board[inverseOverlap].innerHTML = 0;
     }
@@ -89,10 +93,11 @@ function Player1Click() {
     DecideWinner();
     if (!winner) {
       if (lastPosition === 6) {
-        console.log("another turn");
+        document.getElementById('score').innerHTML = "Player 1, you get another turn!";
         PlayerTurn();
       } else {
         currentPlayer = 2;
+        document.getElementById('score').innerHTML = "Player 2's turn.";
         PlayerTurn();
       }
     }
@@ -103,7 +108,7 @@ function Player1Click() {
 function Player2Click() {
   // Checking validity of chosen move
   if (parseInt(this.innerHTML) === 0) {
-    console.log("invalid move");
+    document.getElementById('score').innerHTML = "You can't do that. Try another move!";
   }
   else {
     var stones = parseInt(this.innerHTML);
@@ -140,7 +145,7 @@ function Player2Click() {
     // Capturing logic
     if (lastPosition >= 20 && lastPosition <= 25 && board[overlap-1].innerHTML === "1") {
       board[13].innerHTML = parseInt(board[13].innerHTML) + parseInt(board[inverseOverlap].innerHTML) + parseInt(board[overlap-1].innerHTML);
-      console.log("capture");
+      document.getElementById('score').innerHTML = "Player 2, you captured your opponents pieces!";
       board[overlap-1].innerHTML = 0;
       board[inverseOverlap].innerHTML = 0;
     }
@@ -149,10 +154,11 @@ function Player2Click() {
     DecideWinner();
     if (!winner) {
       if (lastPosition === 13) {
-        console.log("another turn");
+        document.getElementById('score').innerHTML = "You get another turn!";
         PlayerTurn();
       } else {
         currentPlayer = 1;
+        document.getElementById('score').innerHTML = "Player 1's turn.";
         PlayerTurn();
       }
     }
@@ -167,7 +173,7 @@ function DecideWinner() {
     AnnounceResult();
   }
   // Checks if either side is empty
-  else if (board.slice(0,6).every(IsZero) || board.slice(8,13).every(IsZero)) {
+  else if (board.slice(0,6).every(IsZero) || board.slice(7,13).every(IsZero)) {
     if (currentPlayer === 1) {
       currentPlayer = 2;
     }

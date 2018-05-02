@@ -2,8 +2,8 @@
 // Variables
 board = [];
 currentPlayer = 1;
-var player1Board = document.getElementsByClassName('player1');
-var player2Board = document.getElementsByClassName('player2');
+var player1Board = [];
+var player2Board = [];
 winner = false;
 
 // Game start
@@ -13,6 +13,11 @@ PrepareBoard();
 
 function PrepareBoard() {
 
+  // Setting variables to starting values
+  player1Board = document.getElementsByClassName('player1');
+  player2Board = document.getElementsByClassName('player2');
+  currentPlayer = 1;
+
   // Creates an array in the correct order
   player1Board = [].slice.call(player1Board);
   player2Board = [].slice.call(player2Board).reverse();
@@ -21,9 +26,9 @@ function PrepareBoard() {
   // Sets the correct starting values to each space.
   for (var i = 0; i < board.length; i++) {
     if(i === 6 || i === 13) {
-      board[i].innerHTML = 0
+      board[i].innerHTML = 0;
     } else {
-      board[i].innerHTML = 4
+      board[i].innerHTML = 4;
     }
   }
 
@@ -34,13 +39,13 @@ function PlayerTurn() {
   // Sets click events depending upon who is the current player
   if (currentPlayer === 1) {
     for (var i = 0; i < player1Board.length-1; i++) {
-      player1Board[i].addEventListener('click', Player1Click)
-      player2Board[i].removeEventListener('click', Player2Click)
+      player1Board[i].addEventListener('click', Player1Click);
+      player2Board[i].removeEventListener('click', Player2Click);
 
     }
   } else {
     for (var i = 0; i < player2Board.length-1; i++) {
-      player2Board[i].addEventListener('click', Player2Click)
+      player2Board[i].addEventListener('click', Player2Click);
       player1Board[i].removeEventListener('click', Player1Click);
     }
   }
@@ -55,7 +60,6 @@ function Player1Click() {
     var stones = parseInt(this.innerHTML);
     var currentPosition = (parseInt(this.id));
     var lastPosition = currentPosition + stones;
-    console.log(lastPosition);
     var overlap = 0;
     var inverseOverlap = 0;
     this.innerHTML = 0;
@@ -84,7 +88,7 @@ function Player1Click() {
     // Checks for a winner
     DecideWinner();
     if (!winner) {
-      if (lastPosition === 13) {
+      if (lastPosition === 6) {
         console.log("another turn");
         PlayerTurn();
       } else {
@@ -155,16 +159,34 @@ function Player2Click() {
   }
 }
 
-function DecideWinner() {
 
+function DecideWinner() {
+  // Checks if over half the pieces have been collected
   if (parseInt(board[6].innerHTML) > 24 || parseInt(board[13].innerHTML) > 24) {
     winner = true;
     AnnounceResult();
-  } else if ((board.slice(0,6).every(isZero)) || ()) {}}
+  }
+  // Checks if either side is empty
+  else if (board.slice(0,6).every(IsZero) || board.slice(8,13).every(IsZero)) {
+    if (currentPlayer === 1) {
+      currentPlayer = 2;
+    }
+    else {
+      currentPlayer = 1;
+    }
+
+    winner = true;
+    AnnounceResult();
+  }}
+
 
 function AnnounceResult() {
-  player1Board[i].removeEventListener('click', Player1Click)
-  player2Board[i].removeEventListener('click', Player2Click)
+  // Removes the click events
+  for (var i = 0; i < player1Board.length-1; i++) {
+    player1Board[i].removeEventListener('click', Player1Click);
+    player2Board[i].removeEventListener('click', Player2Click);
+  }
+  // Reports the result
   if (winner && currentPlayer === 1) {
     document.getElementById('score').innerHTML = "Player 1 wins!";
   } else if (winner && currentPlayer === 2) {
@@ -172,4 +194,14 @@ function AnnounceResult() {
   } else {
     document.getElementById('score').innerHTML = "It's a draw...";
   }
+}
+
+// Used in DecideWinner
+function IsZero(currentValue) {
+  return currentValue.innerHTML === "0";
+}
+
+
+function Reset(){
+  PrepareBoard();
 }

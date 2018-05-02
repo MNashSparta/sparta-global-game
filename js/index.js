@@ -29,14 +29,21 @@ function PrepareBoard() {
       board[i].innerHTML = 0;
     } else {
       board[i].innerHTML = 4;
-      var img = document.createElement("img");
-      img.src = "image.png";
-      var src = document.getElementById("x");
-      src.appendChild(img);
+      AddPieces();
     }
   }
 
   PlayerTurn();
+}
+
+function AddPieces() {
+  for (var j = 0; j < 4; j++) {
+    var img = document.createElement("img");
+    img.src = "../img/stone-" + j ".png";
+    console.log(img.src);
+    var src = board[i];
+    src.appendChild(img);
+  }
 }
 
 function PlayerTurn() {

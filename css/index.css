@@ -1,0 +1,134 @@
+body {
+  margin: 0 auto;
+  font-family: 'Helvetica';
+  background-image: url("../img/background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: ,100%;
+  color: white;
+}
+
+h1,h2 {
+
+}
+
+.game-board {
+  text-align: center;
+  color: black;
+}
+
+.board-row {
+  height:100px;
+}
+
+.background-row {
+  margin: auto;
+  height: 250px;
+  width: 700px;
+  background-image: url('../img/board.png');
+  background-position: center;
+  background-size: 100%, 100%;
+  background-repeat: no-repeat;
+}
+
+.middle-row {
+  display: inline-block;
+  width: 520px;
+  height: 250px;
+  text-align: center;
+}
+
+.top-row {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.number {
+  width: 70px;
+  height: 100px;
+  display: inline-block;
+
+  margin: 2px;
+}
+
+
+.player {
+  position: relative;
+  border: 0.3px solid black;
+  border-radius: 35px;
+  font-size: 2em;
+  display:inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 60px;
+  width: 60px;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.counter {
+  position: relative;
+  font-size: 1.3em;
+  display:inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 5px;
+}
+
+.hollow {
+  border: 0px solid black;
+}
+
+.displayP1, .displayP2 {
+  position: relative;
+}
+
+.goal1 {
+  float: right;
+  margin-right: 20px;
+  margin-top: 30px;
+}
+.goal2 {
+  float: left;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+.hole {
+  height: 70px;
+  width: 70px;
+}
+
+.stone {
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  z-index: 2;
+}
+
+.mancala {
+  z-index: 1;
+  height: 150px;
+  width: 70px;
+}
+
+.instruction-block {
+  margin-top: 10px;
+}
+
+.content-block {
+  color: black;
+  background-color: olive;
+  font-size: 20px;
+  box-shadow: 5px 5px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+li {
+  margin-bottom: 10px;
+}

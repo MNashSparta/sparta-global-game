@@ -13,46 +13,54 @@
   <body>
     <!-- Title Row -->
     <div>
-      <div>
-        <div>
-          <h1 id="score">Let's play, Mancala!</h1>
+
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 content-block">
+          <h1 id="Title">Let's play, Mancala!</h1>
+          <h2 id="score">Player 1 goes first by clicking along the bottom row.</h2>
         </div>
       </div>
     </div>
 
+
     <!-- Game Board -->
-    <div class=" game-board">
+    <div class="game-board">
       <div class="background-row">
 
         <div class="goal goal2">
-          <div id="board13"><img src="img/mancala.png" class="mancala"/></div>
+          <div class="displayP2" data-num="13" id="board13">
+            <img src="img/mancala.png" class="mancala"/>
+          </div>
           <div class="player2 counter" id="13"></div>
         </div>
 
         <div class = "middle-row">
+
           <div class="top-row board-row">
             <div class="number">
-              <div id="board12"><img src="img/hole.png" class="hole"/></div>
+              <div class="displayP2" data-num="12" id="board12"><img src="img/hole.png" class="hole"/></div>
               <div class="counter player2" id="12"></div>
             </div>
             <div class="number">
-              <div id="board11"><img src="img/hole.png" class="hole"/></div>
+              <div class="displayP2" data-num="11" id="board11"><img src="img/hole.png" class="hole"/></div>
               <div class="counter player2" id="11"></div>
             </div>
             <div class="number">
-              <div id="board10"><img src="img/hole.png" class="hole"/></div>
+              <div class="displayP2" data-num="10" id="board10"><img src="img/hole.png" class="hole"/></div>
               <div class="counter player2" id="10"></div>
             </div>
             <div class="number">
-              <div id="board9"><img src="img/hole.png" class="hole"/></div>
+              <div class="displayP2" data-num="9" id="board9"><img src="img/hole.png" class="hole"/></div>
               <div class="counter player2" id="9"></div>
             </div>
             <div class="number">
-              <div id="board8"><img src="img/hole.png" class="hole"/></div>
+              <div class="displayP2" data-num="8" id="board8"><img src="img/hole.png" class="hole"/></div>
               <div class="counter player2" id="8"></div>
             </div>
             <div class="number">
-              <div id="board7"><img src="img/hole.png" class="hole"/></div>
+              <div class="displayP2" data-num="7" id="board7"><img src="img/hole.png" class="hole"/></div>
               <div class="counter player2" id="7"></div>
             </div>
           </div>
@@ -60,45 +68,61 @@
           <div class="bottom-row board-row">
             <div class="number">
               <div class="counter player1" id="0"></div>
-              <div id="board0"><img src="img/hole.png" class="hole"/></div>
+              <div class="displayP1 0" data-num="0" id="board0"><img src="img/hole.png" class="hole"/></div>
             </div>
             <div class="number">
               <div class="counter player1" id="1"></div>
-              <div id="board1"><img src="img/hole.png" class="hole"/></div>
+              <div class="displayP1 1" data-num="1" id="board1"><img src="img/hole.png" class="hole"/></div>
             </div>
             <div class="number">
               <div class="counter player1" id="2"></div>
-              <div id="board2"><img src="img/hole.png" class="hole"/></div>
+              <div class="displayP1 2" data-num="2" id="board2"><img src="img/hole.png" class="hole"/></div>
             </div>
             <div class="number">
               <div class="counter player1" id="3"></div>
-              <div id="board3"><img src="img/hole.png" class="hole"/></div>
+              <div class="displayP1 3" data-num="3" id="board3"><img src="img/hole.png" class="hole"/></div>
             </div>
             <div class="number">
               <div class="counter player1" id="4"></div>
-              <div id="board4"><img src="img/hole.png" class="hole"/></div>
+              <div class="displayP1 4" data-num="4" id="board4"><img src="img/hole.png" class="hole"/></div>
             </div>
             <div class="number">
               <div class="counter player1" id="5"></div>
-              <div id="board5"><img src="img/hole.png" class="hole"/></div>
+              <div class="displayP1" data-num="5" id="board5"><img src="img/hole.png" class="hole"/></div>
             </div>
           </div>
-          </div>
+        </div>
+
           <div class="goal goal1">
             <div class="player1 counter" id="6"></div>
-            <div id="board6"><img src="img/mancala.png" class="mancala"/></div>
+            <div class="displayP1" data-num="6" id="board6"><img src="img/mancala.png" class="mancala"/></div>
           </div>
+
       </div>
     </div>
 
-    <!-- Other Functions -->
-    <div></br></br></br></br></br></br></br></br></br></br></br>
-      <div>
-        <div>
-          <button onclick="Reset()"class="btn btn-warning">Restart</button>
+    <!-- Instructions -->
+    <div class="container instruction-block">
+      <div class="row">
+        <div class="col-xs-3">
+            <button onclick="reset()" class="btn btn-warning">Restart</button>
+        </div>
+        <div class="col-xs-6 content-block">
+          <ul>
+            <li>Mancala is an old African board game with many variations.</li>
+            <li>The aim of the game is to have more pieces in your end scoring zone, the Mancala, than your opponent.</li>
+            <li>Players take turns to choose a section from their side of the board to play. All of the stones from that section are removed and one is placed in each of the following holes going anti-clockwise until none are left.</li>
+            <li>If the last stone placed falls into the Mancala, that player gets another turn.</li>
+            <li>If the player chooses a section with enough zones to fully wrap around onto their side of the board again AND the last stone falls into an empty space, the player "captures the stones in the opponents section that is directly opposite. This means that all of the stones in that section and the last stone placed get captured and put into the players Mancala."</li>
+            <li>If a player ends up with no stones left on their side of the board and they haven't already scored more than half the points, they lose automatically.</li>
+          </ul>
         </div>
       </div>
     </div>
+
+    <audio id="backgroundAudio" loop autoplay volume="0.1">
+      <source src="src/background.mp3" type="audio/mpeg">
+    </audio>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="js/index.js"></script>

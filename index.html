@@ -17,9 +17,9 @@
     </div>
     <div class="container">
       <div class="row">
-        <div class="col-xs-8 col-xs-offset-2 content-block">
+        <div class="col-xs-10 col-xs-offset-1 content-block">
           <h1 id="Title">Let's play, Mancala!</h1>
-          <h2 id="score">Player 1 goes first by clicking along the bottom row.</h2>
+          <h2 id="score">Click along the bottom row to start.</h2>
         </div>
       </div>
     </div>
@@ -102,20 +102,34 @@
     </div>
 
     <!-- Instructions -->
+
+    <div class="modal fade" id="instructions-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content content-block">
+          <div class="modal-header">
+            <h3 class="modal-title" id="instructions-modal">Instructions</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>Mancala is an old African board game with many variations.</li>
+              <li>The aim of the game is to have more pieces in your end scoring zone, the Mancala, than your opponent.</li>
+              <li>Players take turns to choose a section from their side of the board to play. All of the stones from that section are removed and one is placed in each of the following holes going anti-clockwise until none are left.</li>
+              <li>If the last stone placed falls into the Mancala, that player gets another turn.</li>
+              <li>If the player chooses a section with enough zones to fully wrap around onto their side of the board again AND the last stone falls into an empty space, the player "captures the stones in the opponents section that is directly opposite. This means that all of the stones in that section and the last stone placed get captured and put into the players Mancala."</li>
+              <li>If a player ends up with no stones left on their side of the board and they haven't already scored more than half the points, they lose automatically.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="container instruction-block">
       <div class="row">
-        <div class="col-xs-3">
-            <button onclick="reset()" class="btn btn-warning">Restart</button>
-        </div>
-        <div class="col-xs-6 content-block">
-          <ul>
-            <li>Mancala is an old African board game with many variations.</li>
-            <li>The aim of the game is to have more pieces in your end scoring zone, the Mancala, than your opponent.</li>
-            <li>Players take turns to choose a section from their side of the board to play. All of the stones from that section are removed and one is placed in each of the following holes going anti-clockwise until none are left.</li>
-            <li>If the last stone placed falls into the Mancala, that player gets another turn.</li>
-            <li>If the player chooses a section with enough zones to fully wrap around onto their side of the board again AND the last stone falls into an empty space, the player "captures the stones in the opponents section that is directly opposite. This means that all of the stones in that section and the last stone placed get captured and put into the players Mancala."</li>
-            <li>If a player ends up with no stones left on their side of the board and they haven't already scored more than half the points, they lose automatically.</li>
-          </ul>
+        <div class="col-xs-4 col-xs-offset-4">
+            <button onclick="reset()" class="btn btn-primary">Restart</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#instructions-modal">Instructions</button>
         </div>
       </div>
     </div>

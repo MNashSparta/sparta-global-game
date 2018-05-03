@@ -6,20 +6,25 @@ body {
   background-attachment: fixed;
   background-position: center;
   background-size: ,100%;
-  color: white;
 }
 
-h1,h2 {
+.content-block {
+  color: black;
+  background-color: olive;
+  font-size: 20px;
+  box-shadow: 5px 5px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 20px;
+}
 
+h1 {
+  text-align: center;
 }
 
 .game-board {
   text-align: center;
   color: black;
-}
-
-.board-row {
-  height:100px;
 }
 
 .background-row {
@@ -32,38 +37,19 @@ h1,h2 {
   background-repeat: no-repeat;
 }
 
-.middle-row {
-  display: inline-block;
-  width: 520px;
-  height: 250px;
-  text-align: center;
+.goal1 {
+  float: right;
+  margin-right: 20px;
+  margin-top: 30px;
+}
+.goal2 {
+  float: left;
+  margin-left: 20px;
+  margin-top: 30px;
 }
 
-.top-row {
-  margin-top: 12px;
-  margin-bottom: 12px;
-}
-
-.number {
-  width: 70px;
-  height: 100px;
-  display: inline-block;
-
-  margin: 2px;
-}
-
-
-.player {
+.displayP1, .displayP2 {
   position: relative;
-  border: 0.3px solid black;
-  border-radius: 35px;
-  font-size: 2em;
-  display:inline-block;
-  padding-left: 10px;
-  padding-right: 10px;
-  height: 60px;
-  width: 60px;
-  background: rgba(0, 0, 0, 0.35);
 }
 
 .counter {
@@ -75,24 +61,33 @@ h1,h2 {
   margin: 5px;
 }
 
+.middle-row {
+  display: inline-block;
+  width: 520px;
+  height: 250px;
+  text-align: center;
+}
+
+.board-row {
+  height:100px;
+}
+
+.top-row {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.number {
+  width: 70px;
+  height: 100px;
+  display: inline-block;
+  margin: 2px;
+}
+
 .hollow {
   border: 0px solid black;
 }
 
-.displayP1, .displayP2 {
-  position: relative;
-}
-
-.goal1 {
-  float: right;
-  margin-right: 20px;
-  margin-top: 30px;
-}
-.goal2 {
-  float: left;
-  margin-left: 20px;
-  margin-top: 30px;
-}
 .hole {
   height: 70px;
   width: 70px;
@@ -113,19 +108,6 @@ h1,h2 {
 
 .instruction-block {
   margin-top: 10px;
-}
-
-.content-block {
-  color: black;
-  background-color: olive;
-  font-size: 20px;
-  box-shadow: 5px 5px;
-  margin-bottom: 20px;
-  padding: 20px;
-  border-radius: 20px;
-}
-
-h1 {
   text-align: center;
 }
 

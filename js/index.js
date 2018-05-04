@@ -33,10 +33,10 @@ function prepareArrays() {
 }
 
 function prepareBoard() {
-
   removePieces(i);
   // Sets the correct starting values and pieces to each space.
   for (var i = 0; i < board.length; i++) {
+    // Don't put pieces in the scoring zones.
     if(i === 6 || i === 13) {
       board[i].innerHTML = 0;
     } else {
@@ -57,13 +57,14 @@ function addPieces(counter) {
     img.classList.add("stone");
 
     // Randomising CSS position
-    $(img).css({'left' : randomGenerator(35), 'top': randomGenerator(35) });
+    $(img).css({'left' : randomGenerator(35), 'top': randomGenerator(35)});
 
     // Append to the page
     src.appendChild(img);
   }
 }
 
+// Called in prepareBoard()
 function removePieces() {
   $('.stone').remove();
 }
@@ -79,20 +80,30 @@ function playerTurn() {
   // Sets click events depending upon who is the current player
   if (currentPlayer === 1) {
     for (var i = 0; i < displayP1.length; i++) {
-      player1Board[i].addEventListener('click', player1Click);
-      displayP1[i].addEventListener('click', player1ClickDisplay);
-
-      player2Board[i].removeEventListener('click', player2Click);
-      displayP2[i].removeEventListener('click', player2ClickDisplay);
-
+      // Don't put click events on the scoring zones.
+      if(i === 6 || i === 13) {
+      } else {
+        // Adding
+        player1Board[i].addEventListener('click', player1Click);
+        displayP1[i].addEventListener('click', player1ClickDisplay);
+        // Removing
+        player2Board[i].removeEventListener('click', player2Click);
+        displayP2[i].removeEventListener('click', player2ClickDisplay);
+      }
     }
-  } else {
+  }
+  else {
     for (var i = 0; i < displayP2.length; i++) {
-      player2Board[i].addEventListener('click', player2Click);
-      displayP2[i].addEventListener('click', player2ClickDisplay);
-
-      player1Board[i].removeEventListener('click', player1Click);
-      displayP1[i].removeEventListener('click', player1ClickDisplay);
+      // Again, don't put click events on the scoring zones.
+      if(i === 6 || i === 13) {
+      } else {
+        // Adding
+        player2Board[i].addEventListener('click', player2Click);
+        displayP2[i].addEventListener('click', player2ClickDisplay);
+        // Removing
+        player1Board[i].removeEventListener('click', player1Click);
+        displayP1[i].removeEventListener('click', player1ClickDisplay);
+      }
     }
   }
 }

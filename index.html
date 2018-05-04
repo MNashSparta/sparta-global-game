@@ -12,9 +12,6 @@
   </head>
   <body>
     <!-- Title Row -->
-    <div>
-
-    </div>
     <div class="container">
       <div class="row">
         <div class="col-xs-10 col-xs-offset-1 content-block">
@@ -28,16 +25,13 @@
     <!-- Game Board -->
     <div class="game-board">
       <div class="background-row">
-
         <div class="goal goal2">
           <div class="displayP2" data-num="13" id="board13">
             <img src="img/mancala.png" class="mancala"/>
           </div>
           <div class="player2 counter" id="13"></div>
         </div>
-
         <div class = "middle-row">
-
           <div class="top-row board-row">
             <div class="number">
               <div class="displayP2" data-num="12" id="board12"><img src="img/hole.png" class="hole"/></div>
@@ -64,7 +58,6 @@
               <div class="counter player2" id="7"></div>
             </div>
           </div>
-
           <div class="bottom-row board-row">
             <div class="number">
               <div class="counter player1" id="0"></div>
@@ -92,17 +85,14 @@
             </div>
           </div>
         </div>
-
           <div class="goal goal1">
             <div class="player1 counter" id="6"></div>
             <div class="displayP1" data-num="6" id="board6"><img src="img/mancala.png" class="mancala"/></div>
           </div>
-
       </div>
     </div>
 
     <!-- Instructions -->
-
     <div class="modal fade" id="instructions-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content content-block">
@@ -118,8 +108,8 @@
               <li>The aim of the game is to have more pieces in your end scoring zone, the Mancala, than your opponent.</li>
               <li>Players take turns to choose a section from their side of the board to play. All of the stones from that section are removed and one is placed in each of the following holes going anti-clockwise until none are left.</li>
               <li>If the last stone placed falls into the Mancala, that player gets another turn.</li>
-              <li>If the player chooses a section with enough zones to fully wrap around onto their side of the board again AND the last stone falls into an empty space, the player "captures the stones in the opponents section that is directly opposite. This means that all of the stones in that section and the last stone placed get captured and put into the players Mancala."</li>
-              <li>If a player ends up with no stones left on their side of the board and they haven't already scored more than half the points, they lose automatically.</li>
+              <li>If the player chooses a section with enough zones to fully wrap around onto their side of the board again AND the last stone falls into an empty space, the player "captures the stones in the opponents section that is directly opposite. This means that all of the stones in that section and the last stone placed get captured and put into that players Mancala.</li>
+              <li>If a player ends up with no stones left on their side of the board and they haven't already scored more than half the points, they automatically lose.</li>
             </ul>
           </div>
         </div>
@@ -133,11 +123,9 @@
         </div>
       </div>
     </div>
-
     <audio id="backgroundAudio" loop autoplay volume="0.1">
       <source src="src/background.mp3" type="audio/mpeg">
     </audio>
-
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="js/index.js"></script>
   </body>

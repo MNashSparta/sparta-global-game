@@ -236,7 +236,7 @@ function player2Click() {
     // Checks for a winner
     if (!decideWinner()) {
       if (lastPosition === 13 || lastPosition === 26) {
-        document.getElementById('score').innerHTML = "You get another turn!";
+        document.getElementById('score').innerHTML = "Player 2, you get another turn!";
         playerTurn();
       } else { // Changes to player 1's turn
         currentPlayer = 1;
@@ -301,6 +301,7 @@ function isZero(currentValue) {
 
 // Attached to the reset button
 function reset(){
+  document.getElementById('score').innerHTML = "Player 1's turn.";
   currentPlayer = 1;
   prepareBoard();
 }

@@ -20,3 +20,9 @@ If the last stone placed falls into the Mancala, that player gets another turn.
 If the player chooses a section with enough zones to fully wrap around onto their side of the board again AND the last stone falls into an empty space, the player "captures the stones in the opponents section that is directly opposite. This means that all of the stones in that section and the last stone placed get captured and put into that players Mancala.
 
 If a player ends up with no stones left on their side of the board and they haven't already scored more than half the points, they automatically lose.
+
+
+## Site details
+Upon loading, background music will automatically play and the relevant assets will load, allowing the player to start playing immediately.
+
+There is a reset button which can be pressed at any time to begin a new game.
